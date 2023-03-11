@@ -77,9 +77,9 @@ return (
 
 <div className="details down">
     <h3 className='country-name'>Name: {name}</h3>
-    <h4>Population: <span>{population}</span></h4>
-    <h4>Region: <span>{region}</span></h4>
-    <h4>Capital: <span>{capital}</span></h4> 
+    <p>Population: <span className='values'>{population}</span></p>
+    <p>Region: <span className='values'>{region}</span></p>
+    <p>Capital: <span className='values'>{capital}</span></p> 
 
 </div>
 </article>
