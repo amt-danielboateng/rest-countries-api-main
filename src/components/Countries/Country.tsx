@@ -33,11 +33,14 @@ fetchCountry()
 return(
 <>
 
-<Link to="/">
-<i className="fas fa-arrow-left"></i>Back Home
-</Link>
 
 <section className="country">
+<Link to="/">
+    <button className="back">
+<i className="fas fa-arrow-left"></i> Back Home
+</button>
+</Link>
+
 {country.map((c) => {
 const {alpha2Code, flag, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies=[], languages=[], borders=[]} = c;
 
@@ -55,21 +58,37 @@ return (
         <h5>Region: <span>{region}</span></h5>
         <h5>Sub Region: <span>{subregion}</span></h5>
         <h5>Capital: <span>{capital}</span>{" "}</h5>
+
         </div>
-    <div>
+    <div className="inner-details">
     <h5>Top Level Domain: <span>{topLevelDomain}</span></h5>
-    <h5>Currencies: <span>{currencies[0].name}</span></h5>
-    <h5>Languages: <span>{languages[0].name}</span></h5>
-    </div>
+    <h5 className="currencies">Currencies: <span>{currencies.map(currency => {
+        return (
+            <ul>
+                <li className="currency">
+                    {currency.name}
+                </li>
+            </ul>
+        )
+    })}</span></h5>
+    <h5 className="languages">Languages: <span>{languages.map(language => {
+        return (
+            <ul>
+                <li className="lang">
+                    {language.name}
+                </li>
+            </ul>
+        )
+    })}</span></h5>
     </div>
     </div>
 
 <div>
-    <h3>Border Countries: </h3>
+    <h3 className="border-title">Border Countries:</h3>
     <div className="borders">
-    {borders.map((border) =>{
+    {borders.map((border, index) =>{
         return(
-            <ul key={border}>
+            <ul key={index}>
                 <li>
                 {border}
                 </li>
@@ -78,6 +97,11 @@ return (
     })}
     </div>
 </div>
+    
+
+    </div>
+
+
 </article>
     )
 })}
