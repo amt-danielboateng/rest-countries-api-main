@@ -53,7 +53,7 @@ const getCountryByRegion = async (region: string) => {
                 setCountries(data)
             } catch (error) {
         console.error(error)
-        alert("An error occurred while fetching data. Please try again later.")
+        alert("No region has been selected yet. Kindly select a region.")
     }
 }
 
