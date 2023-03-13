@@ -19,6 +19,7 @@ const Countries: FC = () => {
 const [countries, setCountries] = useState<Country[]>([]);
 
 
+
 useEffect(() =>{
 const fetchCountries = async() =>{
 const response = await fetch(url);
@@ -43,11 +44,20 @@ const getCountryByName = async () => {
 }
 
 const getCountryByRegion = async (region: string) => {
-    const response = await fetch(`https://restcountries.com/v2/region/${region}`)
-    const data = await response.json()
-    setCountries(data)
-
+    try {
+            const response = await fetch(`https://restcountries.com/v2/region/${region}`)
+            if (!response.ok) {
+                throw new Error("Failed...");
+            }
+                const data = await response.json()
+                setCountries(data)
+            } catch (error) {
+        console.error(error)
+        alert("An error occurred while fetching data. Please try again later.")
+    }
 }
+
+
 
 return (
 <>
