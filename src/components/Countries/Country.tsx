@@ -1,5 +1,5 @@
 import React, {useState, useEffect, FC} from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../country.css';
 
 interface CountryDetails {
@@ -20,14 +20,18 @@ borders: string[];
 const Country: FC = () => {
 const [country, setCountry] = useState<CountryDetails[]>([]);
 const {name} = useParams<{ name: string }>();
+const navigate = useNavigate();
+
+const fetchCountry = async() => {
+    const response = await fetch(`https://restcountries.com/v2/name/${name}`)
+    const country = await response.json()
+    setCountry(country);
+    }
 
 useEffect(() =>{
-const fetchCountry = async() => {
-const response = await fetch(`https://restcountries.com/v2/name/${name}`)
-const country = await response.json()
-setCountry(country);
-}
+
 fetchCountry()
+
 }, [name])
 
 return(
@@ -90,7 +94,7 @@ return (
         return(
             <ul key={index}>
                 <li>
-                {border}
+                <Link to={`/countries/${border}`}>{border}</Link>
                 </li>
             </ul>
         )

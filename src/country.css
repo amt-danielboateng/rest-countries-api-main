@@ -3,6 +3,9 @@
 
 }
 
+a {
+    text-decoration: none;
+}
 
 .country .back {
     position: relative;
@@ -84,6 +87,7 @@ object-fit: cover;
     left: 700px;
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 

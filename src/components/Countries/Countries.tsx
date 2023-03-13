@@ -19,13 +19,14 @@ const Countries: FC = () => {
 const [countries, setCountries] = useState<Country[]>([]);
 
 
+const fetchCountries = async() =>{
+    const response = await fetch(url);
+    const countries = await response.json();
+    setCountries(countries);
+ }
 
 useEffect(() =>{
-const fetchCountries = async() =>{
-const response = await fetch(url);
-const countries = await response.json();
-setCountries(countries);
-}
+
 fetchCountries();
 }, [])
 
