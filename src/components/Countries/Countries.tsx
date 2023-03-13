@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef, FC} from 'react';
 import { Link } from 'react-router-dom';
 import Filter from '../Filter/Filter';
 
+
 interface Country {
     name: string;
     population: number;
@@ -59,7 +60,8 @@ return (
         ref={inputRef}
         onChange={getCountryByName}
         />
-
+<img className='search-icon' src="/IcoMoon-Free-master/IcoMoon-Free-master/PNG/16px/135-search.png" alt="" />
+<i className="fa-sharp fa-regular fa-magnifying-glass-location"></i>
 <Filter onRegionChange={getCountryByRegion}/>
 </form>
 

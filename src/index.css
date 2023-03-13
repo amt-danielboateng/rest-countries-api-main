@@ -159,50 +159,30 @@ width: 100%;
   margin-bottom: 5px;
 }
 
-
-/*
-.countries {
-  padding: 0 50px 50px;
+input::placeholder{
+position: relative;
+left: 40px;
 }
 
-.countries article {
-  transition: background-color 0.4s;
+#search {
+  width: 350px;
+  
 }
 
-.countries .flag img {
-  border-radius: 5px 5px 0 0;
-  width: 100%;
-  height: 100%;
+.search-icon {
+  position: relative;
+  right: 545px;
 }
 
-.countries .details {
-  border-radius: 0 0 5px 5px;
-  background-color: var(--article-color);
-  margin: -10px 0 30px;
-  padding: 20px;
-  color: var(--text-color);
-  transition: background-color 0.4s;
-}
-
-.countries .details.light-theme {
-  background-color: var(--light-mode-background);
-  color: var(--light-mode-text);
-}
-
-.countries .details h4 {
-  margin: 10px 0;
-}
-
-.countries .details h4 span {
-  font-weight: 300;
-}
-
-.countries .values {
-  color: gray;
-}
-*/
 
 /* Media queries */
+
+@media (min-width: 375px) {
+  .country-container {
+    margin: -10px 0 30px;
+  }
+}
+
 @media (min-width: 640px) {
   .countries {
     display: grid;

@@ -37,7 +37,7 @@ return(
 <section className="country">
 <Link to="/">
     <button className="back">
-<i className="fas fa-arrow-left"></i> Back Home
+<i className="fas fa-arrow-left"></i> Back
 </button>
 </Link>
 
@@ -62,18 +62,18 @@ return (
         </div>
     <div className="inner-details">
     <h5>Top Level Domain: <span>{topLevelDomain}</span></h5>
-    <h5 className="currencies">Currencies: <span>{currencies.map(currency => {
+    <h5 className="currencies">Currencies: <span>{currencies.map((currency, index) => {
         return (
-            <ul>
+            <ul key={index}>
                 <li className="currency">
                     {currency.name}
                 </li>
             </ul>
         )
     })}</span></h5>
-    <h5 className="languages">Languages: <span>{languages.map(language => {
+    <h5 className="languages">Languages: <span>{languages.map((language, index) => {
         return (
-            <ul>
+            <ul key={index}>
                 <li className="lang">
                     {language.name}
                 </li>
