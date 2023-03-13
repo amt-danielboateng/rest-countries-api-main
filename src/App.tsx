@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Countries from './components/Countries/Countries'
 import Country from './components/Countries/Country';
 import Header from './components/Header/Header'
 
 function App(): JSX.Element {
+
   return (
    <Router>
-   <Header/>
+   <Header />
    <Routes>
    <Route path='/' element={
     <div>

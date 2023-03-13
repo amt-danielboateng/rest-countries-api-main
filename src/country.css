@@ -3,9 +3,11 @@
 
 }
 
+
 .country .back {
+    position: relative;
+    right: 62px;
     margin-bottom: 25px;
-    padding: 10px;
     gap: 10px;
     height: 30px;
     width: 150px;
@@ -52,6 +54,8 @@ gap: 40px;
 }
 
 .country article .flag {
+position: relative;
+right: 78px;
 width: 100%;
 object-fit: cover;
 }
@@ -76,7 +80,7 @@ object-fit: cover;
 
 .country article .borders {
     position: relative;
-    bottom: 115px;
+    bottom: 155px;
     left: 700px;
     display: flex;
     flex-wrap: wrap;
@@ -115,11 +119,11 @@ box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
 .country article .border-title {
     position: relative;
     left: 555px;
-    bottom: 80px;
+    bottom: 120px;
 }
 
 .country article .borders ul.light-theme {
-     background-color: var(--light-mode-background);
+    background-color: var(--light-mode-background);
     color: var(--light-mode-text);
 }
 
@@ -130,6 +134,15 @@ box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
         
     }
 
+    .country .back{
+        left: 15px;
+        width: 100px;
+    }
+
+    .country article .flag {
+        position: relative;
+        left: 0px;
+        }
 
     .country article .borders {
         position: relative;

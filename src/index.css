@@ -27,6 +27,7 @@ color: var(--text-color);
 transition: background-color 0.4s;
 }
 
+
 body.light-theme {
   background-color: var(--light-mode-background);
   color: var(--light-mode-text);
@@ -77,6 +78,30 @@ body.light-theme {
   box-shadow: 0 5px 10px hsla(200, 15%, 8%, 0.1);
 }
 
+i {
+  position: relative;
+  right: 20px;
+}
+
+.header h1 {
+  position: relative;
+  left: 10px;
+}
+
+.header .moon-btn {
+  background-color: var(--article-color);
+  outline: 0;
+  border: 0;
+  border-radius: 3px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.header .moon-btn.light-theme {
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
+}
+
 .header.light-theme {
   background-color: var(--light-mode-background);
   color: var(--light-mode-text);
@@ -91,8 +116,15 @@ body.light-theme {
   padding: 40px 50px;
 }
 
+.select {
+  position: relative;
+  right: 30px;
+}
+
 .form input,
 .form select {
+  position: relative;
+  left: 10px;
   background-color: var(--article-color);
   padding: 12px;
   font-family: inherit;
@@ -118,11 +150,12 @@ body.light-theme {
   gap: 35px;
 }
 
+
 .country-container {
   background-color: var(--article-color);
   color: white;
   width: 250px;
-  height: 370px;
+  height: 360px;
   box-shadow: hsla(200, 15%, 8%, 0.1);
   border-radius: 5px;
   cursor: pointer;
@@ -153,6 +186,13 @@ width: 100%;
 
 .country-container .details {
   padding: 30px;
+ 
+}
+
+.country-container .details.light-theme {
+  background-color: var(--text-color);
+  color: var(--light-mode-text);
+  background-color: 0px 3px 15px rgba(0, 0, 0, 0.2);;
 }
 
 .country-container .details p {
@@ -171,16 +211,41 @@ left: 40px;
 
 .search-icon {
   position: relative;
-  right: 545px;
+  right: 570px;
 }
 
 
 /* Media queries */
 
-@media (min-width: 375px) {
-  .country-container {
-    margin: -10px 0 30px;
+@media (max-width: 375px) {
+  .header {
+    height: 80px;
+    position: relative;
+    left: 5px;
   }
+  .select {
+    right: 87px;
+  }
+
+  .search-icon {
+    position: relative;
+    right: -30px;
+    bottom: 63px;
+  }
+  .moon-btn {
+    position: relative;
+    left: 250px;
+    bottom: 45px;
+  }
+
+  .country-container {
+    margin: -10px 10px 30px;
+  }
+
+  .countries .details {
+    height: 200px;
+  }
+
 }
 
 @media (min-width: 640px) {
@@ -192,6 +257,7 @@ left: 40px;
 
   .countries .details {
     margin: -10px 0 0;
+    height: 200px;
   }
 }
 
