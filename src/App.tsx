@@ -12,10 +12,11 @@ function App(): JSX.Element {
    <Routes>
    <Route path='/' element={
     <div>
-      <Countries/>
+      <Countries />
     </div>
    } />
    <Route path='/countries/:name' element={<Country />} />
+   <Route path='/:code' element={<Country />} />
    </Routes>
    </Router>
   )

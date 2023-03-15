@@ -45,7 +45,7 @@ return(
 </button>
 </Link>
 
-{country.map((c) => {
+{country?.map((c) => {
 const {alpha2Code, flag, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies=[], languages=[], borders=[]} = c;
 
 return (
@@ -87,24 +87,32 @@ return (
     </div>
     </div>
 
-<div>
-    <h3 className="border-title">Border Countries:</h3>
-    <div className="borders">
-    {borders.map((border, index) =>{
-        return(
-            <ul key={index}>
-                <li>
-                <Link to={`/countries/${border}`}>{border}</Link>
-                </li>
-            </ul>
-        )
-    })}
-    </div>
-</div>
+    <div>
     
+        <div>
+            <h3 className="border-title">Border Countries:</h3>
+            <div className="borders">
+            {borders.map((border, index) => {
+  try {
+    return (
+      <ul key={index}>
+        <li>
+          <Link to={`/countries/${border}`} key={alpha2Code}>{border}</Link>
+        </li>
+      </ul>
+    );
+  } catch (error) {
+    console.error(`Error while rendering border ${border}: `, error);
+    return null;
+  }
+})}
+
+            </div>
+        </div>
+
+</div>
 
     </div>
-
 
 </article>
     )
