@@ -25,6 +25,7 @@ const navigate = useNavigate();
 const fetchCountry = async() => {
     const response = await fetch(`https://restcountries.com/v2/name/${name}`)
     const country = await response.json()
+    console.log(country);
     setCountry(country);
     }
 
